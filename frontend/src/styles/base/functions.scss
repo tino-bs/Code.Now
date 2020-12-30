@@ -1,0 +1,4 @@
+@function css-variable($var) {
+	@return var(--#{$var});
+}
+

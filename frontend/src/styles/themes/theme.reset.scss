@@ -1,0 +1,93 @@
+@import '~@angular/material/theming';
+@import "~src/styles/base/variables";
+@import "~src/styles/base/mixins";
+
+@mixin oaq-styles-reset-theme($theme) {
+	$primary: map-get($theme, primary);
+	$accent: map-get($theme, accent);
+	$warn: map-get($theme, warn);
+	$foreground: map-get($theme, foreground);
+
+	a {
+		transition: all $oaq-transition-default ease-out;
+		color: mat-color($foreground, text);
+
+		&:hover {
+			color: mat-color($foreground, text);
+		}
+
+		&.oaq-text-link {
+			@include hover-and-active() {
+				color: mat-color($accent);
+			}
+		}
+	}
+
+	.oaq-text-color-accent {
+		color: mat-color($accent);
+	}
+
+	.oaq-text-color-secondary {
+		color: mat-color($foreground, secondary-text);
+	}
+
+	.oaq-text-color-warn {
+		color: mat-color($warn);
+	}
+
+	// darker version of the dialog backdrop
+	.oaq-dark-backdrop {
+		background: rgba(0,0,0,.66);
+	}
+
+	// fine-tuning for overlay element positions
+	// e.g. dialog, snackbar, ...
+	.cdk-global-overlay-wrapper {
+		padding-bottom: $oaq-toolbar-height-mobile;
+
+		@media (min-width: map-get($grid-breakpoints, md)) {
+			padding-bottom: 0;
+			padding-top: $oaq-toolbar-height-default;
+			padding-left: $oaq-sidebar-width-default;
+		}
+	}
+
+	// reduce height of outline form fields
+	mat-form-field.mat-form-field.mat-form-field-appearance-outline {
+
+		> div.mat-form-field-wrapper {
+
+			> div.mat-form-field-flex {
+
+				> div.mat-form-field-infix {
+					padding: 0.4em 0;
+
+					> span.mat-form-field-label-wrapper {
+						top: -1.5em;
+					}
+				}
+			}
+		}
+
+		&.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+			transform: translateY(-1em) scale(.75);
+			width: 133.33333%;
+		}
+
+		.mat-form-field-prefix,
+		.mat-form-field-suffix {
+			padding-left: $oaq-icon-spacing-l;
+			top: 0;
+		}
+	}
+
+	// reduce margin for form field errors
+	.mat-form-field-subscript-wrapper {
+		margin-top: 0.3333333333em;
+	}
+
+	// reduce mobile
+	.mat-tab-label {
+		padding: 0 $oaq-spacing-s;
+	}
+}

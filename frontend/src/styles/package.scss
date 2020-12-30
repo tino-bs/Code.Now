@@ -1,0 +1,96 @@
+// Custom variables
+@import 'base/variables';
+
+// Base reset, utils and page
+@import 'base/reset';
+@import 'base/utilities';
+@import 'base/page';
+
+// Bootstrap basics
+@import "~bootstrap/scss/bootstrap-reboot";
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/utilities";
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+	$font-family: 	$oaq-font-family-base,
+	$display-4:     mat-typography-level(112px, 112px, 300),
+	$display-3:     mat-typography-level(56px, 56px, 400, $oaq-font-family-outstanding),
+	$display-2:     mat-typography-level(45px, 48px, 400, $oaq-font-family-outstanding),
+	$display-1:     mat-typography-level(34px, 40px, 400, $oaq-font-family-outstanding),
+	$headline:      mat-typography-level($oaq-font-size-headline, $oaq-line-height-headliune, 500, $oaq-font-family-outstanding),
+	$title:         mat-typography-level($oaq-font-size-title, $oaq-line-height-title, 500, $oaq-font-family-outstanding),
+	$subheading-2:  mat-typography-level($oaq-font-size-subheading-2, $oaq-line-height-subheading-2, 400, $oaq-font-family-outstanding),
+	$subheading-1:  mat-typography-level($oaq-font-size-subheading-1, $oaq-line-height-subheading-1, 400, $oaq-font-family-base),
+	$body-2:        mat-typography-level($oaq-font-size-base, $oaq-line-height-base, 500, $oaq-font-family-base),
+	$body-1:        mat-typography-level($oaq-font-size-base, $oaq-line-height-base, 400, $oaq-font-family-base),
+	$caption:       mat-typography-level($oaq-font-size-caption, $oaq-line-height-caption, 400, $oaq-font-family-base),
+	$button:        mat-typography-level($oaq-font-size-button, $oaq-font-size-button, 500, $oaq-font-family-outstanding)
+);
+
+// Override specific material component styles
+.mat-checkbox-layout {
+	white-space: normal !important;
+	font-size: $oaq-font-size-caption;
+}
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core($custom-typography);
+
+// Define the palettes for your various themes using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+@import 'themes/default.theme';
+@import 'themes/dark.theme';
+
+// Theme resets
+@import 'themes/theme.reset';
+
+// Custom theme mixin for custom theme based elements
+@import "themes/themed-elements/package";
+
+@mixin custom-components-theme($theme) {
+	@include oaq-styles-reset-theme($theme);
+	@include oaq-toolbar-theme($theme);
+	@include oaq-sidebar-theme($theme);
+	@include oaq-mikado-theme($theme);
+}
+
+// Theme wrapper
+.oaq-theme-wrapper {
+	height: 100%;
+	width: 100%;
+	padding-top: $oaq-toolbar-height-default;
+
+	&.is-mobile {
+		padding-top: 0;
+		padding-bottom: $oaq-toolbar-height-mobile;
+	}
+
+	.r4-sidenav-content {
+		transition: all $oaq-sidebar-animation-duration ease-out;
+		margin-left: $oaq-sidebar-width-default !important;
+
+		&.collapsed-sidenav {
+			margin-left: $oaq-sidebar-width-collapsed !important;
+		}
+	}
+}
+
+// Themes
+.default-theme {
+	@include angular-material-theme($oaq-theme);
+	@include custom-components-theme($oaq-theme);
+}
+
+.dark-theme {
+	@include angular-material-theme($oaq-dark-theme);
+	@include custom-components-theme($oaq-dark-theme);
+}

@@ -1,0 +1,19 @@
+@import "./variables";
+@import "./mixins";
+
+.oaq-clickable {
+	@include unselectable();
+	cursor: pointer;
+}
+
+.oaq-text-bold {
+	font-weight: bolder;
+}
+
+.oaq-text-large {
+	font-size: $oaq-font-size-large;
+}
+
+.oaq-text-small {
+	font-size: $oaq-font-size-caption;
+}

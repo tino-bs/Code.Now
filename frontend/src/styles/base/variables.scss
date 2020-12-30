@@ -1,0 +1,163 @@
+@import '~@angular/material/theming';
+
+// minor overrides
+// ---------------
+$link-hover-decoration: none;
+$label-margin-bottom: 0;
+
+
+// fonts
+// fallback font families are configured in material base theming
+// --------------------------------------------------------------
+$oaq-font-family-base: 'Source Sans Pro';
+$oaq-font-family-outstanding: 'Oxygen';
+$oaq-font-size-base: 16px;
+$oaq-font-size-large: 18px;
+$oaq-line-height-base: 1.5;
+$oaq-font-size-headline: 24px;
+$oaq-line-height-headliune: 36px;
+$oaq-font-size-title: 20px;
+$oaq-line-height-title: 32px;
+$oaq-font-size-subheading-2: 16px;
+$oaq-line-height-subheading-2: 28px;
+$oaq-font-size-subheading-1: 15px;
+$oaq-line-height-subheading-1: 24px;
+$oaq-font-size-caption: 14px;
+$oaq-line-height-caption: 20px;
+$oaq-font-size-button: 16px;
+
+
+// sizes & spacings
+// ----------------
+
+// base size
+$oaq-size-default: 36px;
+
+$oaq-spacing-xxxxxxxl: $oaq-size-default * 2; 					// 72px
+$oaq-spacing-xxxxxxl: round($oaq-size-default * 1.8333333333);	// 66px
+$oaq-spacing-xxxxxl: round($oaq-size-default * 1.6666666666); 	// 60px
+$oaq-spacing-xxxxl: round($oaq-size-default * 1.5); 				// 54px
+$oaq-spacing-xxxl: round($oaq-size-default * 1.3333333333); 		// 48px
+$oaq-spacing-xxl: round($oaq-size-default * 1.1666666666); 		// 42px
+$oaq-spacing-xl: $oaq-size-default * 1; 							// 36px
+$oaq-spacing-l: round($oaq-size-default * .8333333333); 			// 30px
+$oaq-spacing-base: round($oaq-size-default * .6666666666); 		// 24px
+$oaq-spacing-m: round($oaq-size-default * .5); 					// 18px
+$oaq-spacing-s: round($oaq-size-default * .3333333333); 			// 12px
+$oaq-spacing-xs: round($oaq-size-default * .1666666666); 			// 6px
+$oaq-spacing-micro: round($oaq-size-default * .0833333333); 		// 3px
+$oaq-spacing-nano: round($oaq-size-default * .0555555555); 		// 2px
+
+
+// breakpoints for bootstrap grid
+// ------------------------------
+$spacer: $oaq-size-default;
+$grid-gutter-width: $spacer;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+);
+
+
+// app brand
+// ----------
+$oaq-brand-logo-size-default: 40px;
+$oaq-brand-logo-size-handset: 32px;
+$oaq-brand-logo-spacing-handset: 2px;
+$oaq-brand-title-size-default: 20px;
+$oaq-brand-title-size-handset: 16px;
+
+
+// app colors
+// ----------
+
+// brand
+$oaq-color-brand-light: #69B2F8;
+$oaq-color-brand-default: #198CFF;
+$oaq-color-brand-dark: #0E57A4;
+$oaq-color-brand-darker: #093567;
+
+// white
+$oaq-color-white: #FFFFFF;
+
+// black
+$oaq-color-black: #333333;
+
+// grey
+$oaq-color-grey1: #9E9E9E;
+
+// brand colors
+$oaq-color-brand-logo: $oaq-color-brand-default;
+$oaq-color-brand-title: $oaq-color-brand-default;
+$oaq-color-brand-beta: $oaq-color-white;
+
+// material color map
+$oaq-brand-color-map: (
+	100: $oaq-color-brand-light,
+	200: $oaq-color-brand-default,
+	300: $oaq-color-brand-dark,
+	400: $oaq-color-brand-darker,
+	contrast: (
+		100: $light-secondary-text,
+		200: $light-primary-text,
+		300: $light-primary-text,
+	)
+);
+
+// text link colors
+$oaq-color-text-link: $oaq-color-brand-dark;
+$oaq-background-text-link: transparent;
+
+$success-colors: mat-palette($mat-green, 400);
+$warning-colors: mat-palette($mat-amber, 400);
+
+
+// layout and ui elements
+// ---------------
+
+// images
+$oaq-image-width-default: 600px;
+$oaq-image-height-default: 400px;
+
+// icons
+$oaq-icon-size-default: 24px;
+$oaq-icon-space-default: 48px;
+$oaq-icon-spacing-default: 2px;
+$oaq-icon-spacing-l: 4px;
+
+// mikado
+$oaq-mikado-size-default: $oaq-icon-space-default;
+
+// button
+$oaq-button-size-default: 36px;
+
+// toolbar
+$toolbar-breakpoint: map-get($grid-breakpoints, md);
+$oaq-toolbar-z-index: $cdk-z-index-overlay-backdrop - 1;
+$oaq-toolbar-height-default: 60px;
+$oaq-toolbar-height-mobile: $oaq-icon-space-default;
+$oaq-toolbar-font-size-default: $oaq-font-size-large;
+$oaq-toolbar-font-size-mobile: $oaq-font-size-base;
+$oaq-toolbar-horizontal-spacing-default: round($grid-gutter-width / 3);
+
+// navigation sidebar
+$oaq-sidebar-width-default: 220px;
+$oaq-sidebar-width-collapsed: $oaq-icon-space-default;
+$oaq-sidebar-animation-duration: 225ms;
+$oaq-sidebar-toggle-size: $oaq-icon-space-default;
+
+
+// transition
+// ----------
+$oaq-transition-default: 250ms;
+
+
+// border radius
+// -------------
+$oaq-border-radius-default: 4px;
+$oaq-border-radius-outstanding: 100% 10% 100% 10% / 10% 100% 10% 100%;
+$oaq-border-radius-outstanding-hover: 10% 100% 10% 100% / 100% 10% 100% 10%;

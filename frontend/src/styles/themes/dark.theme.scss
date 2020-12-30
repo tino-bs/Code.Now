@@ -1,0 +1,8 @@
+@import "~src/styles/base/variables";
+@import '~@angular/material/theming';
+
+$oaq-dark-primary: mat-palette($oaq-brand-color-map, 300, 200, 400);
+$oaq-dark-accent: mat-palette($mat-orange, 500, 100, 700);
+$oaq-dark-warn: mat-palette($mat-deep-orange, 500);
+
+$oaq-dark-theme: mat-dark-theme($oaq-dark-primary, $oaq-dark-accent, $oaq-dark-warn);

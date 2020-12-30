@@ -1,0 +1,118 @@
+@import '~@angular/material/theming';
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~src/styles/base/variables";
+
+@mixin oaq-toolbar-theme($theme) {
+	$primary: map-get($theme, primary);
+	$accent: map-get($theme, accent);
+
+	.oaq-toolbar {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		width: 100%;
+		height: $oaq-toolbar-height-default;
+		z-index: $oaq-toolbar-z-index;
+		display: flex;
+		box-sizing: border-box;
+		flex-direction: row;
+		align-items: center;
+		white-space: nowrap;
+		background: mat-color($primary);
+		font-family: $oaq-font-family-outstanding;
+		font-size: $oaq-toolbar-font-size-default;
+
+		.oaq-toolbar-brand {
+			height: 100%;
+			width: $oaq-sidebar-width-default;
+			padding-left: $oaq-toolbar-horizontal-spacing-default;
+
+			a {
+				display: flex;
+				align-items: center;
+				height: 100%;
+			}
+		}
+
+		.oaq-sidebar-toggle {
+			transition: all $oaq-sidebar-animation-duration ease-in-out;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			font-size: 0;
+
+			&--open {
+				left: $oaq-sidebar-width-default - $oaq-sidebar-toggle-size;
+			}
+		}
+
+		oaq-app-toolbar {
+			position: relative;
+			height: 100%;
+			display: flex;
+			flex: 1 1 auto;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&__item {
+			position: relative;
+			display: flex;
+			height: 100%;
+			align-items: center;
+			color: $oaq-color-white;
+		}
+
+		&__page-title,
+		&__countdown {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%,0);
+			padding: 0 $oaq-toolbar-horizontal-spacing-default;
+
+			&--mobile {
+				left: 0;
+				transform: translate(0, 0);
+			}
+		}
+
+		&__user {
+			position: absolute;
+			right: 0;
+			transition: all $oaq-sidebar-animation-duration ease-out;
+			padding: 0 $oaq-toolbar-horizontal-spacing-default 0 (2 * $oaq-toolbar-horizontal-spacing-default);
+			clip-path: polygon($oaq-toolbar-horizontal-spacing-default $oaq-toolbar-horizontal-spacing-default, 100% 0, 100% 100%, 0% 100%);
+			background: mat-color($primary);
+
+			&__count {
+				display: inline-block;
+				margin-right: $oaq-spacing-micro;
+			}
+
+			&--mobile-escape {
+				transform: translateY(-($oaq-toolbar-height-mobile - 1));
+			}
+		}
+
+		&--mobile {
+			top: auto;
+			bottom: 0;
+			height: $oaq-toolbar-height-mobile;
+			padding: 0 0 0 $oaq-sidebar-toggle-size;
+			font-size: $oaq-toolbar-font-size-mobile;
+
+			.oaq-sidebar-toggle {
+				&--open {
+					left: 0;
+				}
+			}
+
+			oaq-app-toolbar {
+				justify-content: space-between;
+			}
+		}
+	}
+}

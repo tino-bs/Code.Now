@@ -1,0 +1,144 @@
+// --------------------------------- //
+// theming for oaq mikado element     //
+// check component for documentation //
+// --------------------------------- //
+@import "~src/styles/base/variables";
+@import '~@angular/material/theming';
+
+$mikado-width: $oaq-mikado-size-default;
+$mikado-height: $oaq-mikado-size-default;
+$mikado-line-width-default: round($mikado-width / 2);
+$mikado-line-width-menu: $mikado-line-width-default;
+$mikado-line-width-close: $mikado-line-width-default;
+$mikado-line-width-back: round($mikado-width * .4166666666666); // 5/12
+$mikado-line-size: 1px;
+$mikado-vertical-center: ($mikado-height / 2) - ($mikado-line-size);
+$mikado-transition-default: $oaq-transition-default;
+
+@mixin oaq-mikado-theme($theme) {
+	$primary: map-get($theme, primary);
+	$accent: map-get($theme, accent);
+	$foreground: map-get($theme, foreground);
+	$mikado-color-default: mat-color($foreground, text);
+	$mikado-color-primary: mat-color($primary);
+	$mikado-color-accent: mat-color($accent);
+
+	.oaq-mikado {
+		display: inline-block;
+		position: relative;
+		height: $mikado-height;
+		width: $mikado-width;
+		cursor: pointer;
+
+		// default appearance as menu burger
+		span {
+			transition: all $mikado-transition-default ease;
+			height: $mikado-line-size;
+			width: $mikado-line-width-menu;
+			background: $mikado-color-default;
+			position: absolute;
+			left: round(($mikado-width - $mikado-line-width-menu) / 2);
+			top: $mikado-vertical-center;
+			display: block;
+
+			&:nth-of-type(1) {
+				top: $mikado-vertical-center - 8px;
+			}
+
+			&:nth-of-type(3) {
+				top: $mikado-vertical-center + 8px;
+			}
+		}
+
+		// appearance as times cross
+		&--mode-close {
+			span {
+				&:nth-of-type(2) {
+					opacity: 0;
+				}
+
+				&:nth-of-type(1) {
+					top: $mikado-vertical-center;
+					transform: rotate(135deg);
+				}
+
+				&:nth-of-type(3) {
+					top: $mikado-vertical-center;
+					transform: rotate(-135deg);
+				}
+			}
+		}
+
+		// appearance as arrow to left
+		&--mode-back {
+			span {
+				&:nth-of-type(2) {
+					opacity: 0;
+				}
+
+				&:nth-of-type(1),
+				&:nth-of-type(3) {
+					left: round($mikado-width / 2) - round($mikado-line-width-back / 2);
+					border-radius: $mikado-line-size;
+					width: $mikado-line-width-back;
+				}
+
+				&:nth-of-type(1) {
+					transform: rotate(150deg);
+					top: $mikado-vertical-center - ($mikado-line-width-back / 4);
+				}
+
+				&:nth-of-type(3) {
+					transform: rotate(-150deg);
+					top: $mikado-vertical-center + ($mikado-line-width-back / 4);
+				}
+			}
+		}
+
+		// appearance as arrow to left
+		&--mode-forward {
+			span {
+				&:nth-of-type(2) {
+					opacity: 0;
+				}
+
+				&:nth-of-type(1),
+				&:nth-of-type(3) {
+					left: round($mikado-width / 2) - round($mikado-line-width-back / 2);
+					border-radius: $mikado-line-size;
+					width: $mikado-line-width-back;
+				}
+
+				&:nth-of-type(1) {
+					transform: rotate(-150deg);
+					top: $mikado-vertical-center - ($mikado-line-width-back / 4);
+				}
+
+				&:nth-of-type(3) {
+					transform: rotate(150deg);
+					top: $mikado-vertical-center + ($mikado-line-width-back / 4);
+				}
+			}
+		}
+
+		// coloring
+		// --------
+		&--color-contrast {
+			span {
+				background: mat-color($primary, default-contrast);
+			}
+		}
+
+		&--color-black {
+			span {
+				background: $oaq-color-black;
+			}
+		}
+
+		&--color-white {
+			span {
+				background: $oaq-color-white;
+			}
+		}
+	}
+}
