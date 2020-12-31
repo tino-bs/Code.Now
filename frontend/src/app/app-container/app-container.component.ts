@@ -5,10 +5,10 @@ import {
   actionSettingsChangeLanguage,
   actionSettingsChangeTheme,
   Language,
-  SettingsFacadeService,
+  SettingsFacade,
   Theme
 } from '../core/settings'
-import { UiFacadeService } from '../ui/ui.facade.service'
+import { UiFacade } from '../ui'
 import { LocalizationService } from '../core/localization'
 import { appTranslations } from '../app-translations'
 
@@ -20,17 +20,17 @@ import { appTranslations } from '../app-translations'
 export class AppContainerComponent implements OnInit {
   title = 'acn-code-now';
 
-  theme$ = this.settingsFacadeService.theme$;
-  language$ = this.settingsFacadeService.language$;
+  theme$ = this.settingsFacade.theme$;
+  language$ = this.settingsFacade.language$;
 
-  isMobile$ = this.uiFacadeService.isMobile$;
+  isMobile$ = this.uiFacade.isMobile$;
 
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
 
   constructor(
     private localizationService: LocalizationService,
-    private settingsFacadeService: SettingsFacadeService,
-    private uiFacadeService: UiFacadeService
+    private settingsFacade: SettingsFacade,
+    private uiFacade: UiFacade
   ) {
   }
 
@@ -39,10 +39,10 @@ export class AppContainerComponent implements OnInit {
   }
 
   onThemeToggle(theme: Theme) {
-    this.settingsFacadeService.dispatch(actionSettingsChangeTheme({ theme }));
+    this.settingsFacade.dispatch(actionSettingsChangeTheme({ theme }));
   }
 
   onLanguageToggle(language: Language) {
-		this.settingsFacadeService.dispatch(actionSettingsChangeLanguage({language}));
+		this.settingsFacade.dispatch(actionSettingsChangeLanguage({language}));
 	}
 }

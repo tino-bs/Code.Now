@@ -15,7 +15,7 @@ import { reducers, metaReducers } from './core.state';
 import { LocalizationModule } from './localization/localization.module';
 
 // settings
-import { SettingsEffects, SettingsFacadeService } from './settings';
+import { SettingsEffects, SettingsFacade } from './settings';
 
 // storage service
 import { LocalStorageService } from './storage/local-storage.service';
@@ -42,7 +42,7 @@ import { LocalStorageService } from './storage/local-storage.service';
   ],
   providers: [
     LocalStorageService,
-    SettingsFacadeService,
+    SettingsFacade,
   ],
   exports: [
     TranslateModule,

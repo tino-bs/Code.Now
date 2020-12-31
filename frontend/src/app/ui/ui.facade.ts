@@ -6,7 +6,7 @@ import {map} from 'rxjs/operators';
 import {mobileBreakpointWidth} from './ui.constants';
 
 @Injectable()
-export class UiFacadeService {
+export class UiFacade {
 
 	isMobile$: Observable<boolean>;
 

@@ -19,7 +19,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonToggleModule } from '@angular/material/button-toggle'
 
-import { UiFacadeService } from './ui.facade.service'
+import { UiFacade } from './ui.facade'
 
 @NgModule({
   imports: [
@@ -64,7 +64,7 @@ import { UiFacadeService } from './ui.facade.service'
   ],
   providers: [
     MatDatepickerModule,
-    UiFacadeService
+    UiFacade
   ]
 })
 

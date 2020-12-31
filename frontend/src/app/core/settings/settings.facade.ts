@@ -6,7 +6,7 @@ import { Language, State, Theme } from './settings.models';
 import { selectSettingsLanguage, selectSettingsTheme } from './settings.selectors';
 
 @Injectable()
-export class SettingsFacadeService {
+export class SettingsFacade {
   theme$: Observable<Theme>;
   language$: Observable<Language>;
 
