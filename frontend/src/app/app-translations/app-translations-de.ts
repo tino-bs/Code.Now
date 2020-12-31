@@ -1,15 +1,15 @@
-export const AppTranslationsEn = {
+export const appTranslationsDe = {
   navigation: {
     main: {
       item: {
-        dashboard: 'Dashboard',
+        dashboard: 'Übersicht',
       }
     }
   },
   pages: {
     dashboard: {
       title: {
-        main: 'Dashboard Page'
+        main: 'Übersichtsseite'
       }
     }
   }

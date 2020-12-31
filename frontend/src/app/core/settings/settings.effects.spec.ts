@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
 
 import { AppState } from '../core.state';
-import { LocalStorageService } from '../storage/local.storage.service';
+import { LocalStorageService } from '../storage/local-storage.service';
 import { LocalizationService } from '../localization';
 
 import { SettingsEffects, SETTINGS_KEY } from './settings.effects';

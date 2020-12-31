@@ -5,7 +5,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { merge, of } from 'rxjs';
 import { distinctUntilChanged, tap, withLatestFrom } from 'rxjs/operators';
 
-import { LocalStorageService } from '../storage/local.storage.service';
+import { LocalStorageService } from '../storage/local-storage.service';
 import { LocalizationService } from '../localization';
 import { selectSettingsFeature } from './settings.selectors';
 

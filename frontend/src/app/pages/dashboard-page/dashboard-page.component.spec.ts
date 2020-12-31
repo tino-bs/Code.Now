@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { DashboardPageComponent } from './dashboard.page.component';
+import { DashboardPageComponent } from './dashboard-page.component';
 import { TranslateModule } from '@ngx-translate/core'
 import { PagesModule } from '../pages.module'
 

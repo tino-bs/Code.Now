@@ -7,14 +7,14 @@ import {
   Language,
   SettingsFacadeService,
   Theme
-} from './core/settings'
-import { UiFacadeService } from './ui/ui.facade.service'
-import { LocalizationService } from './core/localization'
-import { AppTranslations } from './translations/app.translations'
+} from '../core/settings'
+import { UiFacadeService } from '../ui/ui.facade.service'
+import { LocalizationService } from '../core/localization'
+import { appTranslations } from '../app-translations'
 
 @Component({
   selector: 'oaq-root',
-  templateUrl: './app.container.component.html',
+  templateUrl: './app-container.component.html',
 })
 
 export class AppContainerComponent implements OnInit {
@@ -35,7 +35,7 @@ export class AppContainerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.localizationService.setTranslations(AppTranslations);
+    this.localizationService.setTranslations(appTranslations);
   }
 
   onThemeToggle(theme: Theme) {

@@ -1,6 +1,6 @@
 import {ActionReducerMap, MetaReducer} from '@ngrx/store';
 
-import {initStateFromLocalStorage} from './meta-reducers/init.state.from.local.storage.reducer';
+import {initStateFromLocalStorage} from './meta-reducers/init-state-from-local-storage.reducer';
 
 import {settingsReducer, SettingsState, stateSettings} from './settings';
 

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
-import {Translation} from './translation.models';
-import {Language} from '../settings/settings.models';
+import {Translation} from './localization.models';
+import {Language} from '../settings';
 
 export const languages = ['en', 'de'];
 

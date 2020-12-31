@@ -1,10 +1,10 @@
 import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
-import { AbstractPageComponent } from '../abstract.page.component'
+import { AbstractPageComponent } from '../abstract-page.component'
 
 @Component({
   selector: 'oaq-dashboard-page',
-  templateUrl: './dashboard.page.component.html'
+  templateUrl: './dashboard-page.component.html'
 })
 export class DashboardPageComponent
   extends AbstractPageComponent

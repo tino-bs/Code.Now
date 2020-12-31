@@ -7,12 +7,12 @@ import { CoreModule } from './core/core.module';
 import { UiModule } from './ui/ui.module'
 
 // app container
-import { AppContainerComponent } from './app.container.component';
+import { AppContainerComponent } from './app-container';
 
 // routing and pages
 import { AppRoutingModule } from './routing/app-routing.module';
 import { PagesModule } from './pages/pages.module'
-import { DashboardPageComponent } from './pages/dashboard/dashboard.page.component';
+import { DashboardPageComponent } from './pages/dashboard-page';
 
 @NgModule({
   imports: [

@@ -18,7 +18,7 @@ import { LocalizationModule } from './localization/localization.module';
 import { SettingsEffects, SettingsFacadeService } from './settings';
 
 // storage service
-import { LocalStorageService } from './storage/local.storage.service';
+import { LocalStorageService } from './storage/local-storage.service';
 
 
 @NgModule({

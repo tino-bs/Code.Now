@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AbstractPageComponent } from './abstract.page.component';
+import { AbstractPageComponent } from './abstract-page.component';
 
 @NgModule({
   imports: [
