@@ -8,6 +8,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { environment } from '~/environments/environment';
 
+// http module
+import { HttpModule } from './http/http.module'
+
 // core state
 import { reducers, metaReducers } from './core.state';
 
@@ -20,12 +23,14 @@ import { SettingsEffects, SettingsFacade } from './settings';
 // storage service
 import { LocalStorageService } from './storage/local-storage.service';
 
-
 @NgModule({
   imports: [
     // angular
     CommonModule,
     HttpClientModule,
+
+    // http
+    HttpModule,
 
     // translation
     TranslateModule.forRoot(),
