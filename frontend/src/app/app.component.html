@@ -1,25 +1,49 @@
-<div class="oaq-theme-wrapper dark-theme">
+<div class="oaq-theme-wrapper {{ theme$ | async }}-theme">
   <!-- Toolbar -->
-  <mat-toolbar class="header" color="primary">
+  <mat-toolbar class="oaq-toolbar" color="primary">
     <div class="main-title">Accenture - Code.Now!</div>
-    <span class="nav-tool-items">
-    <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
-  </span>
+
+    <div class="nav-tool-items">
+      <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
+    </div>
+
+    <mat-button-toggle-group
+      #groupTheme="matButtonToggleGroup"
+      [value]="theme$ | async"
+      (change)="onThemeToggle(groupTheme.value)">
+      <mat-button-toggle value="default">
+        Light
+      </mat-button-toggle>
+      <mat-button-toggle value="dark">
+        Dark
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <mat-button-toggle-group
+      #groupLanguage="matButtonToggleGroup"
+      [value]="language$ | async"
+      (change)="onLanguageToggle(groupLanguage.value)">
+      <mat-button-toggle value="en">
+        English
+      </mat-button-toggle>
+      <mat-button-toggle value="de">
+        Deutsch
+      </mat-button-toggle>
+    </mat-button-toggle-group>
   </mat-toolbar>
 
   <mat-sidenav-container>
     <!-- Sidenav -->
     <mat-sidenav
       #sidenav
-      [mode]="isBiggerScreen() ? 'over' : 'side'"
-      [(opened)]="opened"
-      [fixedInViewport]="true"
-      [fixedTopGap]
+      class="oaq-sidebar"
+      [mode]="(isMobile$ | async) ? 'over' : 'side'"
+      [opened]="(isMobile$ | async) === false"
     >
       <mat-nav-list>
         <a mat-list-item routerLinkActive="active" routerLink="/dashboard">
           <mat-icon>dashboard</mat-icon>
-          Dashboard
+          <span matLine>{{ 'app.navigation.main.item.dashboard' | translate }}</span>
         </a>
       </mat-nav-list>
     </mat-sidenav>

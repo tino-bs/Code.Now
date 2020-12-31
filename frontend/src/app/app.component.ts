@@ -1,5 +1,16 @@
-import { Component, ViewChild, HostListener, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+
+import {
+  actionSettingsChangeLanguage,
+  actionSettingsChangeTheme,
+  Language,
+  SettingsFacadeService,
+  Theme
+} from './core/settings'
+import { UiFacadeService } from './ui/ui.facade.service'
+import { LocalizationService } from './core/localization'
+import { AppTranslations } from './translations/app.translations'
 
 @Component({
   selector: 'oaq-root',
@@ -8,37 +19,30 @@ import { MatSidenav } from '@angular/material/sidenav';
 
 export class AppComponent implements OnInit {
   title = 'acn-code-now';
-  opened = true;
+
+  theme$ = this.settingsFacadeService.theme$;
+  language$ = this.settingsFacadeService.language$;
+
+  isMobile$ = this.uiFacadeService.isMobile$;
+
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
 
+  constructor(
+    private localizationService: LocalizationService,
+    private settingsFacadeService: SettingsFacadeService,
+    private uiFacadeService: UiFacadeService
+  ) {
+  }
+
   ngOnInit() {
-    console.log(window.innerWidth)
-    if (window.innerWidth < 768) {
-      this.sidenav.fixedTopGap = 55;
-      this.opened = false;
-    } else {
-      this.sidenav.fixedTopGap = 55;
-      this.opened = true;
-    }
+    this.localizationService.setTranslations(AppTranslations);
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    if (event.target.innerWidth < 768) {
-      this.sidenav.fixedTopGap = 55;
-      this.opened = false;
-    } else {
-      this.sidenav.fixedTopGap = 55
-      this.opened = true;
-    }
+  onThemeToggle(theme: Theme) {
+    this.settingsFacadeService.dispatch(actionSettingsChangeTheme({ theme }));
   }
 
-  isBiggerScreen() {
-    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    if (width < 768) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  onLanguageToggle(language: Language) {
+		this.settingsFacadeService.dispatch(actionSettingsChangeLanguage({language}));
+	}
 }

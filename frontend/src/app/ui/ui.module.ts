@@ -17,11 +17,15 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonToggleModule } from '@angular/material/button-toggle'
+
+import { UiFacadeService } from './ui.facade.service'
 
 @NgModule({
   imports: [
     CommonModule,
     MatButtonModule,
+    MatButtonToggleModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
@@ -41,6 +45,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   ],
   exports: [
     MatButtonModule,
+    MatButtonToggleModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
@@ -59,8 +64,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   ],
   providers: [
     MatDatepickerModule,
+    UiFacadeService
   ]
 })
 
-export class AngularMaterialModule {
+export class UiModule {
 }
