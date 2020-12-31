@@ -14,10 +14,10 @@ import { AppTranslations } from './translations/app.translations'
 
 @Component({
   selector: 'oaq-root',
-  templateUrl: './app.component.html',
+  templateUrl: './app.container.component.html',
 })
 
-export class AppComponent implements OnInit {
+export class AppContainerComponent implements OnInit {
   title = 'acn-code-now';
 
   theme$ = this.settingsFacadeService.theme$;
