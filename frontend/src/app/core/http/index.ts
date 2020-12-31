@@ -1,1 +1,1 @@
-export * from './abstract.http.service';
+export * from './abstract-http.service';

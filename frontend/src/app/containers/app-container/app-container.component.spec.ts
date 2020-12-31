@@ -3,8 +3,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { TranslateModule } from '@ngx-translate/core'
 import { AppContainerComponent } from './app-container.component';
-import { CoreModule } from '../core/core.module'
-import { UiModule } from '../ui/ui.module'
+import { CoreModule } from '~/app/core/core.module'
+import { UiModule } from '~/app/ui/ui.module'
 
 describe('AppContainerComponent', () => {
   beforeEach(waitForAsync(() => {

@@ -1,18 +1,21 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
+import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 // basic modules
-import { CoreModule } from './core/core.module';
+import { CoreModule } from './core/core.module'
 import { UiModule } from './ui/ui.module'
 
-// app container
-import { AppContainerComponent } from './app-container';
+// containers
+import { ContainerModule } from './containers/container.module'
+import { AppContainerComponent } from './containers/app-container'
 
-// routing and pages
-import { AppRoutingModule } from './routing/app-routing.module';
+// routes
+import { AppRoutingModule } from './routes/app-routing.module'
+
+// pages
 import { PagesModule } from './pages/pages.module'
-import { DashboardPageComponent } from './pages/dashboard-page';
+import { DashboardPageComponent } from './pages/dashboard-page'
 
 @NgModule({
   imports: [
@@ -21,17 +24,20 @@ import { DashboardPageComponent } from './pages/dashboard-page';
 
     CoreModule,
     UiModule,
+    ContainerModule,
+    AppRoutingModule,
     PagesModule,
-
-    AppRoutingModule
   ],
   declarations: [
+    // containers
     AppContainerComponent,
-    DashboardPageComponent
+
+    // pages
+    DashboardPageComponent,
   ],
   providers: [],
   bootstrap: [AppContainerComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {
 }
