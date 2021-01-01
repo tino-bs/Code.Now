@@ -6,48 +6,38 @@ import { UiFacade } from './ui.facade'
 
 // angular material components
 import { MatButtonModule } from '@angular/material/button'
-import { MatToolbarModule } from '@angular/material/toolbar'
-import { MatIconModule } from '@angular/material/icon'
-import { MatBadgeModule } from '@angular/material/badge'
-import { MatSidenavModule } from '@angular/material/sidenav'
-import { MatListModule } from '@angular/material/list'
-import { MatGridListModule } from '@angular/material/grid-list'
-import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatInputModule } from '@angular/material/input'
-import { MatSelectModule } from '@angular/material/select'
-import { MatRadioModule } from '@angular/material/radio'
-import { MatDatepickerModule } from '@angular/material/datepicker'
-import { MatNativeDateModule } from '@angular/material/core'
-import { MatChipsModule } from '@angular/material/chips'
-import { MatTooltipModule } from '@angular/material/tooltip'
-import { MatTableModule } from '@angular/material/table'
-import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatButtonToggleModule } from '@angular/material/button-toggle'
+import { MatCardModule } from '@angular/material/card'
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatIconModule } from '@angular/material/icon'
+import { MatListModule } from '@angular/material/list'
+import { MatPaginatorModule } from '@angular/material/paginator'
+import { MatRadioModule } from '@angular/material/radio'
+import { MatSelectModule } from '@angular/material/select'
+import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatTooltipModule } from '@angular/material/tooltip'
 
-// custom components
+// custom ui components
 import { GhostListItemComponent } from './components/list/ghost-list-item'
 
 @NgModule({
   imports: [
+    // angular
     CommonModule,
+
+    // material components
     MatButtonModule,
     MatButtonToggleModule,
-    MatToolbarModule,
+    MatCardModule,
     MatIconModule,
-    MatSidenavModule,
-    MatBadgeModule,
     MatListModule,
-    MatGridListModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatChipsModule,
-    MatTooltipModule,
-    MatTableModule,
     MatPaginatorModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatTooltipModule,
   ],
   providers: [
     MatDatepickerModule,
@@ -57,24 +47,20 @@ import { GhostListItemComponent } from './components/list/ghost-list-item'
     GhostListItemComponent,
   ],
   exports: [
+    // material components
     MatButtonModule,
     MatButtonToggleModule,
-    MatToolbarModule,
+    MatCardModule,
     MatIconModule,
-    MatSidenavModule,
-    MatBadgeModule,
     MatListModule,
-    MatGridListModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatDatepickerModule,
-    MatChipsModule,
-    MatTooltipModule,
-    MatTableModule,
     MatPaginatorModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatTooltipModule,
 
+    // custom ui components
     GhostListItemComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
