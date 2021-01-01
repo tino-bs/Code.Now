@@ -1,0 +1,36 @@
+@import "~src/styles/base/variables";
+@import "~src/styles/base/keyframes";
+
+$ghost-list-item-icon-width: 150px;
+$ghost-list-item-text-width: $ghost-list-item-icon-width;
+$ghost-list-item-title-width: $ghost-list-item-text-width  * .8;
+$ghost-list-item-animation-duration: 2s;
+
+:host {
+	.oaq-ghost-list-item {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&__icon {
+			font-size: $ghost-list-item-icon-width;
+			opacity: 0;
+			animation: loadingPulsate $ghost-list-item-animation-duration infinite ease-out;
+		}
+
+		&__title {
+			animation: loadingOpacityPulse $ghost-list-item-animation-duration infinite ease-out;
+			display: inline-block;
+			height: $oaq-line-height-title;
+			width: $ghost-list-item-title-width;
+			margin: $oaq-spacing-m 0;
+
+			&--small {
+				height: $oaq-line-height-base;
+				width: $ghost-list-item-text-width;
+				margin: 0;
+			}
+		}
+	}
+}

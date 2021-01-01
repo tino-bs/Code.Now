@@ -4,7 +4,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { TranslateModule } from '@ngx-translate/core'
 import { AppContainerComponent } from './app-container.component';
 import { CoreModule } from '~/app/core/core.module'
-import { UiModule } from '~/app/ui/ui.module'
+import { UiModule } from '~/app/shared/ui/ui.module'
 
 describe('AppContainerComponent', () => {
   beforeEach(waitForAsync(() => {

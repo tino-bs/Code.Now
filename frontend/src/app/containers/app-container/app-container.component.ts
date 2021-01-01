@@ -8,7 +8,7 @@ import {
   SettingsFacade,
   Theme,
 } from '~/app/core/settings'
-import { UiFacade } from '~/app/ui'
+import { UiFacade } from '~/app/shared/ui'
 import { AbstractContainerComponent } from '../abstract-container.component'
 import { LocalizationService } from '~/app/core/localization'
 import { appTranslations } from '~/app/translations'

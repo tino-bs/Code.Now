@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 // basic modules
 import { CoreModule } from './core/core.module'
-import { UiModule } from './ui/ui.module'
+import { SharedModule } from './shared/shared.module'
 
 // containers
 import { ContainerModule } from './containers/container.module'
@@ -23,7 +23,8 @@ import { DashboardPageComponent } from './pages/dashboard-page'
     BrowserAnimationsModule,
 
     CoreModule,
-    UiModule,
+    SharedModule,
+
     ContainerModule,
     AppRoutingModule,
     PagesModule,

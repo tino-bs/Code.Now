@@ -84,7 +84,7 @@ export class AbstractHttpService {
   }
 
   private fetchCachableList<T>() {
-    const url = `${this.apiUrl}/`;
+    const url = `${this.apiUrl}`;
 
     return this.httpClient.get<T>(url);
   }
@@ -105,7 +105,7 @@ export class AbstractHttpService {
   }
 
   private fetchCachableListItemDetails<T>(id: string) {
-    const url = `${this.apiUrl}/${id}/`;
+    const url = `${this.apiUrl}/${id}`;
 
     return this.httpClient.get<T>(url);
   }
@@ -115,13 +115,13 @@ export class AbstractHttpService {
   }
 
   updateOneListItem<T>(id: string, toUpdate: T, withCredentials?: boolean) {
-    const url = `${this.apiUrl}/${id}/`;
+    const url = `${this.apiUrl}/${id}`;
 
     return this.httpClient.put<T>(url, toUpdate, { withCredentials });
   }
 
   deleteOneListItem(id: string, withCredentials?: boolean) {
-    const url = `${this.apiUrl}/${id}/`;
+    const url = `${this.apiUrl}/${id}`;
 
     return this.httpClient.delete(url, { withCredentials });
   }
