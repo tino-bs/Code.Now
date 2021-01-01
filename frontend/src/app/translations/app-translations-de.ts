@@ -3,6 +3,7 @@ export const appTranslationsDe = {
     main: {
       item: {
         dashboard: 'Übersicht',
+        measurements: 'Messungen',
       }
     }
   },

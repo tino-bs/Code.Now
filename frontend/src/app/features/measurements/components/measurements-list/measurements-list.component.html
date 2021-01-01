@@ -1,0 +1,24 @@
+<div class="row align-items-end measurements-list">
+	<div *ngFor="let measurement of measurements" class="col-md-6 col-lg-6 mb-3">
+		<mat-card class="shadow measurements-list__item">
+			<mat-card-title class="text-truncate">
+				{{ measurement.parameter }}
+			</mat-card-title>
+			<mat-card-subtitle class="mb-1">
+				{{ measurement.value }}
+				{{ measurement.unit }}
+			</mat-card-subtitle>
+			<mat-card-content class="mt-2">
+				Country: {{ measurement.country }}<br>
+				City: {{ measurement.city }}<br>
+				Location: {{ measurement.location }}
+			</mat-card-content>
+		</mat-card>
+	</div>
+	<ng-container *ngIf="measurements.length === 0">
+		<!-- loading -->
+		<div *ngFor="let go of ghostMeasurements" class="col-md-6 col-lg-6 mb-3">
+			<oaq-ghost-list-item></oaq-ghost-list-item>
+		</div>
+	</ng-container>
+</div>

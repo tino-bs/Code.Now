@@ -10,8 +10,8 @@ import { SharedModule } from './shared/shared.module'
 import { ContainerModule } from './containers/container.module'
 import { AppContainerComponent } from './containers/app-container'
 
-// routes
-import { AppRoutingModule } from './routes/app-routing.module'
+// router
+import { AppRouterModule } from './router/app-router.module'
 
 // pages
 import { PagesModule } from './pages/pages.module'
@@ -26,7 +26,7 @@ import { DashboardPageComponent } from './pages/dashboard-page'
     SharedModule,
 
     ContainerModule,
-    AppRoutingModule,
+    AppRouterModule,
     PagesModule,
   ],
   declarations: [

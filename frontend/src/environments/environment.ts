@@ -4,7 +4,8 @@
 
 export const environment = {
   appName: 'oaq',
-  production: false
+  production: false,
+  oaqApiV1: 'https://api.openaq.org/v1',
 };
 
 /*

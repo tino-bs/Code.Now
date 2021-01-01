@@ -1,0 +1,20 @@
+// web components style goes here
+@import "~src/styles/base/variables";
+
+$oaq-measurements-list-logo-size: $oaq-spacing-xxxxxxl;
+
+:host {
+	.measurements-list {
+		&__item {
+			overflow: hidden;
+
+			&__logo {
+				// reset card-header-avatar style
+				border-radius: 0;
+
+				height: $oaq-measurements-list-logo-size;
+				width: auto;
+			}
+		}
+	}
+}
