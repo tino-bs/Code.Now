@@ -77,6 +77,8 @@ caddy run
 ```
 *Visit* [https://localhost](https://localhost)
 
+See [further information](./frontend/README.md) according the frontend app
+
 ## Submission
 
 - After you completed the challenge, upload it to your github page and make it public (so our team can review it)
