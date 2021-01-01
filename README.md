@@ -1,9 +1,5 @@
 # CODE.NOW!
 
-<p align="center">
-  <img src="https://github.com/AccentureChallenge/Code.Now/blob/master/frontend/src/assets/acnCodeNowHeader.png">
-</p>
-
 Are you ready to make an impact? Then join our Accenture Code.Now challenge!​
 
 Air pollution is an important topic and will influence the quality of our future. As the hazards of air pollution remain invisible without air quality data, AirPoll as a young, international startup, has developed and placed air quality monitors all over the world in order to provide the largest air quality database. ​
@@ -66,14 +62,20 @@ Of course, you are also allowed to use your fronted framework (and package manag
 #### What you need to get our example going
 
 - Install [Node.js 12.16.2](https://nodejs.org/en/download/) or later which includes npm
-- Install [Angular CLI](https://angular.io/guide/setup-local) via npm in your terminal: `npm install -g @angular/cli`
+- Install [Caddy 2.0](https://caddyserver.com/docs/install) or later
 
 #### How to run the frontend application
-
-- Once checked out, navigate to the `frontend` folder
-- In the terminal, run `npm install` to install all dependencies
-- To run the application, execute the command `ng serve` (development mode)
-- Navigate to `http://localhost:4200/` in your browser to view the application
+*In the frontend directory:*
+```bash
+npm install
+```
+```bash
+npm run start
+```
+```bash
+caddy run
+```
+*Visit* [https://localhost](https://localhost)
 
 ## Submission
 
