@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing'
 
 import { DashboardPageComponent } from './dashboard-page.component';
 import { TranslateModule } from '@ngx-translate/core'
@@ -12,6 +13,7 @@ describe('DashboardPageComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         PagesModule,
+        RouterTestingModule,
         TranslateModule.forRoot()
       ],
       declarations: [DashboardPageComponent]
