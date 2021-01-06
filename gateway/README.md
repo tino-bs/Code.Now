@@ -4,20 +4,44 @@
 > API gateway, based on [Nest](https://github.com/nestjs/nest).
 
 ## Setup
-Make sure to have [Node.js 12](https://nodejs.org/en/download/) (or later) installed
+Make sure to have [Node.js 12](https://nodejs.org/en/download/) (or later)
+and [Docker](https://docs.docker.com/get-docker/) installed.  
 
-### Environment variables
+In order to use the comfy `make` commands you should have the
+[Make Automation Tool](https://www.gnu.org/software/make/manual/make.html) installed,
+but it is not absolutely necessary to get the work done.  
+*You can check by running `make -v` or `gmake -v` - both are equally efficient for this project.*
+
+### Make setup
+```bash
+make setup
+```
+
+### Or step by step
+#### 1. Environment variables
 copy the file `.env.example` to `.env`
 
-### Install Dependencies
+#### 2. Install Dependencies
 ```bash
 npm install
 ```
 
 ### Optional: Local environment overrides
-copy the file `.env.local.example` to `.env.local` and change your desired variables in the copied file
+Copy the file `.env.local.example` to `.env.local` and change your desired variables in the copied file.
 
-### Run The App
+## Run The App
+### Make start
+```bash
+make start
+```
+
+### Or step by step
+#### 1. Start docker containers for db
+```bash
+docker-compose up
+```
+
+#### 2. Start node app
 ```bash
 # development mode
 npm run start:dev
@@ -27,32 +51,39 @@ npm run start:prod
 ```
 
 ## Tests
+### Make tests
 ```bash
-# unit tests
-npm run test
+make tests
+```
 
-# e2e tests
+### Or step by step
+#### 1. Unit tests
+```bash
+npm run test:unit
+```
+
+#### 2. End-to-end tests
+```bash
+docker-compose up -d
 npm run test:e2e
-
-# test coverage
-npm run test:cov
+docker-compose stop
 ```
 
 ## Postgres DB
 
 ### Local connection to the database
+#### 1. Start docker container, if it is not already running
 ```bash
-# start docker container, if it is not already running
 docker-compose up -d
 ```
 
-#### Connection via pgAdmin
+#### 2.a Connection via pgAdmin
 * visit http://localhost:8080
 * enter `{POSTGRES_USER}` and `{POSTGRES_PASSWORD}`
 
 *See the [pgAdmin docs](https://www.pgadmin.org) for further information*
 
-#### Connection via bash
+#### 2.b Connection via bash
 ```bash
 docker-compose run postgres bash
 ```
