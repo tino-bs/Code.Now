@@ -6,7 +6,7 @@ const validationSchema = Joi.object({
   // base app config
   APP_PORT: Joi.number().default(3000),
   NODE_ENV: Joi.string()
-    .valid('development', 'production')
+    .valid('development', 'test', 'production')
     .default('development'),
 
   // database config
