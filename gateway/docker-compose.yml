@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:alpine
+    env_file:
+      - .env.example
+    ports:
+    - "5432:5432"
+    volumes:
+    - postgres-data:/data/postgres
+    networks:
+    - postgres
+
+  pgadmin:
+    links:
+    - postgres:postgres
+    container_name: pgadmin
+    env_file:
+      - .env.example
+    image: dpage/pgadmin4
+    ports:
+    - "8080:80"
+    volumes:
+    - postgres-data:/root/.pgadmin
+    networks:
+    - postgres
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres-data:
+    name: oaq-postgres
