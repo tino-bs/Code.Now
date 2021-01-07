@@ -4,7 +4,7 @@ import { ormConfigPostgres } from './orm.config';
 
 const validationSchema = Joi.object({
   // base app config
-  APP_PORT: Joi.number().default(3000),
+  APP_PORT: Joi.number().required(),
   NODE_ENV: Joi.string()
     .valid('development', 'test', 'production')
     .default('development'),
