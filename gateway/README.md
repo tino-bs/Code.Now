@@ -3,14 +3,19 @@
 # Gateway
 > API gateway, based on [Nest](https://github.com/nestjs/nest).
 
-## Setup
-Make sure to have [Node.js 12](https://nodejs.org/en/download/) (or later)
-and [Docker](https://docs.docker.com/get-docker/) installed.  
-
+### Makefile
 In order to use the comfy `make` commands you should have the
 [Make Automation Tool](https://www.gnu.org/software/make/manual/make.html) installed,
 but it is not absolutely necessary to get the work done.  
-*You can check by running `make -v` or `gmake -v` - both are equally efficient for this project.*
+*You can check by running `make -v` or `gmake -v` - each is equally efficient from v3 or later*
+
+#### Makefile support for your IDE
+[Jetbrains](https://plugins.jetbrains.com/plugin/9333-makefile-support) or
+[VS Code](https://marketplace.visualstudio.com/items?itemName=carlos-algms.make-task-provider)
+
+## Setup
+Make sure to have [Node.js 12](https://nodejs.org/en/download/) (or later)
+and [Docker](https://docs.docker.com/get-docker/) (including *docker compose*) installed.
 
 ### Make setup
 ```bash

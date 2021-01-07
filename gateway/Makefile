@@ -1,3 +1,7 @@
+# docker variables
+DOCKER_START = docker-compose up -d
+DOCKER_STOP = docker-compose stop
+
 # Setup the project
 setup:
 	cp .env.example .env
@@ -5,16 +9,16 @@ setup:
 
 # Start the project
 start:
-	docker-compose up -d
+	${DOCKER_START}
 	npm run start:dev
 
 # Stop docker containers
 stop:
-	docker-compose stop
+	${DOCKER_STOP}
 
 # Start tests
 tests:
 	npm run test:unit
-	docker-compose up -d
+	${DOCKER_START}
 	npm run test:e2e
-	docker-compose stop
+	${DOCKER_STOP}
