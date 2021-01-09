@@ -11,7 +11,10 @@ const validationSchema = Joi.object({
     .default('development'),
 
   // database config
-  ...ormConfigPostgres,
+  ...ormConfigValidationSchema,
+
+  // cors config
+  ...corsConfigValidationSchema,
 });
 
 export const globalConfig: ConfigModuleOptions = {
