@@ -1,6 +1,7 @@
 import { ConfigModuleOptions } from '@nestjs/config/dist/interfaces';
 import * as Joi from 'joi';
-import { ormConfigPostgres } from './orm.config';
+import { ormConfigValidationSchema } from './orm.config';
+import { corsConfigValidationSchema } from './cors.config';
 
 const validationSchema = Joi.object({
   // base app config

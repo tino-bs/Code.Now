@@ -1,7 +1,7 @@
 <img src="https://nestjs.com/img/logo_text.svg" align="right" width="200" alt="Nest Logo" />
 
-# Gateway
-> API gateway, based on [Nest](https://github.com/nestjs/nest).
+# Backend
+> based on [Nest](https://github.com/nestjs/nest).
 
 ### Makefile
 In order to use the comfy `make` commands you should have the

@@ -1,10 +1,10 @@
 {
-  "name": "gateway",
+  "name": "oac-backend",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Nest Backend",
+  "author": "tino.goetz",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
