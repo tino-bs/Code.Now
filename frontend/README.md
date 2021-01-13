@@ -1,8 +1,8 @@
 # Client App
-> Standalone Web-Frontend, powered by Angular
+> Web-Frontend, powered by [Angular](https://angular.io)
 
 ## Getting started
-> Make sure to follow the [setup instructions](../README.md)
+> If you want to start the complete application, follow the [general setup instructions](../README.md)
 
 ### Local Development
 *serve with hot-reload*
@@ -22,13 +22,13 @@ npm run lint
 ### Unit Tests
 *Execute unit tests*
 ```bash
-npm run test
+npm run test:unit
 ```
 
 ### E2E Tests
 *Execute e2e tests*
 ```bash
-npm run e2e
+npm run test:e2e
 ```
 
 ## Build Setup

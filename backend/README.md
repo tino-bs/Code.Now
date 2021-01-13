@@ -1,7 +1,7 @@
 <img src="https://nestjs.com/img/logo_text.svg" align="right" width="200" alt="Nest Logo" />
 
 # Backend
-> based on [Nest](https://github.com/nestjs/nest).
+> powered by [Nest](https://github.com/nestjs/nest)
 
 ### Makefile
 In order to use the comfy `make` commands you should have the
@@ -37,7 +37,7 @@ Copy the file `.env.local.example` to `.env.local` and change your desired varia
 ## Run The App
 ### Make start
 ```bash
-make start
+make start-standalone
 ```
 
 ### Or step by step

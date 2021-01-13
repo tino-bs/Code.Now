@@ -3,7 +3,7 @@ import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.int
 import { AppModule } from './app.module';
 
 const corsConfig: CorsOptions = {
-  origin: process.env.CLIENT_HOST,
+  origin: `https://${process.env.CLIENT_HOST_WEB}`,
 };
 
 async function bootstrap() {

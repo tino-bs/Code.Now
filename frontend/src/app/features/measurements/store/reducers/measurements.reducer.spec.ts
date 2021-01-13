@@ -3,7 +3,7 @@ import {
   actionLoadMeasurementsSuccess,
   actionLoadMeasurementsError,
 } from '../actions/measurements.api.actions'
-import { testMeasurement, testMeasurements } from '../../models/measurements.models'
+import { testMeasurement, testApiV1Response } from '../../models/measurements.models'
 
 describe('Measurements Reducer', () => {
 
@@ -23,19 +23,12 @@ describe('Measurements Reducer', () => {
   })
 
   describe('retrieving the LoadMeasurementsSuccess action', () => {
-    const testActionLoadMeasurementsSuccess = actionLoadMeasurementsSuccess({ resp: testMeasurements })
+    const testActionLoadMeasurementsSuccess = actionLoadMeasurementsSuccess({ resp: testApiV1Response })
     const testStateLoadMeasurements = measurementsReducer(testMeasurementsState, testActionLoadMeasurementsSuccess)
 
     it('should create the measurements entities', () => {
       expect(testStateLoadMeasurements.ids[0]).toEqual('test_id')
-      expect({ ...testStateLoadMeasurements.entities.test_id }).toEqual({
-        id: testMeasurement.location,
-        title: testMeasurement.parameter,
-        short_term: testMeasurement.country,
-        sponsor_id: testMeasurement.city,
-        description: testMeasurement.unit,
-        price: testMeasurement.value,
-      })
+      expect({ ...testStateLoadMeasurements.entities.test_id }).toEqual(testMeasurement)
     })
 
     it('should set measurements "loaded" true', () => {
