@@ -2,37 +2,38 @@ version: "3"
 
 services:
   postgres:
-    container_name: postgres
+    container_name: oaq_postgres
     image: postgres:alpine
+    restart: unless-stopped
     env_file:
       - .env
     ports:
-    - "5432:5432"
+      - "5432:5432"
     volumes:
-    - postgres-data:/data/postgres
+      - postgres-data:/var/lib/postgresql/data
     networks:
-    - database
+      - database
 
   pgadmin:
     links:
-    - postgres:postgres
-    container_name: pgadmin
+      - postgres:postgres
+    container_name: oaq_pgadmin
+    image: dpage/pgadmin4
     env_file:
       - .env
-    image: dpage/pgadmin4
     ports:
-    - "8080:80"
+      - "8080:80"
     volumes:
-    - postgres-data:/root/.pgadmin
+      - postgres-data:/root/.pgadmin
     networks:
-    - database
+      - database
 
   caddy:
-    container_name: caddy
-    env_file:
-        - .env
+    container_name: oaq_caddy
     image: caddy:2
     restart: unless-stopped
+    env_file:
+      - .env
     ports:
       - "80:80"
       - "443:443"

@@ -3,8 +3,14 @@
 **/tmp
 **/out-tsc
 
+# admin panel
+.adminbro/
+
 # dependencies
 **/node_modules
+
+# generated orm config
+ormconfig.json
 
 # environment variables
 .env

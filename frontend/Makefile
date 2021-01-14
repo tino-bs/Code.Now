@@ -1,13 +1,25 @@
+# ---------
+# Variables
+# ---------
+# Make variables
+MAKE_DOLLAR := $$
+
+# Project variables
+PROJECT_PREFIX = oaq
+
+# --------------------
+# Application commands
+# --------------------
 # Setup frontend
 setup:
-	npm install
+	yarn
 
 # Start frontend
 start:
-	npm run start --detached
+	yarn start --detached
 
 # Run frontend tests
 tests:
-	npm run test:unit
-	npm run test:e2e
-	npm run lint
+	yarn test:unit
+	yarn test:e2e
+	yarn lint

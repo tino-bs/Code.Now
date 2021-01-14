@@ -10,7 +10,7 @@ module.exports = {
       name: 'backend',
       cwd: './backend',
       script: './node_modules/.bin/nest',
-      args: 'start',
+      args: 'start --watch',
     }
   ],
 }

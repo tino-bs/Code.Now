@@ -1,9 +1,21 @@
+# ---------
+# Variables
+# ---------
+# Make variables
+MAKE_DOLLAR := $$
+
+# Project variables
+PROJECT_PREFIX = oaq
+
+# --------------------
+# Application commands
+# --------------------
 # Setup the whole project
 setup:
 	@echo "\n"
 	@echo Run Setup
 	@echo ---------
-	npm install
+	yarn
 	cd backend && $(MAKE) setup
 	cd frontend && $(MAKE) setup
 	@echo ---------
@@ -16,7 +28,7 @@ start:
 	@echo Start Project
 	@echo -------------
 	cd backend && $(MAKE) start
-	npm run pm2:start
+	yarn pm2:start
 	@echo -------------
 	@echo "\n"
 
@@ -25,7 +37,7 @@ stop:
 	@echo "\n"
 	@echo Stop Project
 	@echo ------------
-	npm run pm2:stop
+	yarn pm2:stop
 	cd backend && $(MAKE) stop
 	@echo ------------
 	@echo "\n"
@@ -36,7 +48,7 @@ status:
 	@echo Current Running Status
 	@echo ----------------------
 	cd backend && $(MAKE) status
-	npm run pm2:status
+	yarn pm2:status
 	@echo ----------------------
 	@echo "\n"
 

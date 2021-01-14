@@ -15,7 +15,7 @@ but it is not absolutely necessary to get the work done.
 [VS Code](https://marketplace.visualstudio.com/items?itemName=carlos-algms.make-task-provider)
 
 ## Setup
-Make sure to have [Node.js 12](https://nodejs.org/en/download/) (or later)
+Make sure to have [yarn](https://classic.yarnpkg.com/en)
 and [Docker](https://docs.docker.com/get-docker/) (including *docker compose*) installed.
 
 ### Make setup

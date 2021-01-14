@@ -7,13 +7,13 @@
 ### Local Development
 *serve with hot-reload*
 ```bash
-npm run start
+yarn start
 ```
 
 ### Linting
 *lint all .ts files*
 ```bash
-npm run lint
+yarn lint
 ```
 
 ## Tests
@@ -22,13 +22,13 @@ npm run lint
 ### Unit Tests
 *Execute unit tests*
 ```bash
-npm run test:unit
+yarn test:unit
 ```
 
 ### E2E Tests
 *Execute e2e tests*
 ```bash
-npm run test:e2e
+yarn test:e2e
 ```
 
 ## Build Setup
@@ -36,12 +36,12 @@ npm run test:e2e
 ### Production
 *build with production env*
 ```bash
-npm run build
+yarn build
 ```
 
 ## Angular
 For detailed explanation on how things work, run 
 ```bash
-npm run ng help 
+yarn ng help 
 ```
 or check out the docs for [Angular](https://angular.io) and [Angular CLI](https://cli.angular.io).
