@@ -1,7 +1,7 @@
 <img src="https://nestjs.com/img/logo_text.svg" align="right" width="200" alt="Nest Logo" />
 
 # Backend
-> based on [Nest](https://github.com/nestjs/nest).
+> powered by [Nest](https://github.com/nestjs/nest)
 
 ### Makefile
 In order to use the comfy `make` commands you should have the
@@ -14,7 +14,7 @@ but it is not absolutely necessary to get the work done.
 [VS Code](https://marketplace.visualstudio.com/items?itemName=carlos-algms.make-task-provider)
 
 ## Setup
-Make sure to have [Node.js 12](https://nodejs.org/en/download/) (or later)
+Make sure to have [yarn](https://classic.yarnpkg.com/en) (or later)
 and [Docker](https://docs.docker.com/get-docker/) (including *docker compose*) installed.
 
 ### Make setup
@@ -28,7 +28,7 @@ copy the file `.env.example` to `.env`
 
 #### 2. Install Dependencies
 ```bash
-npm install
+yarn
 ```
 
 ### Optional: Local environment overrides
@@ -37,7 +37,7 @@ Copy the file `.env.local.example` to `.env.local` and change your desired varia
 ## Run The App
 ### Make start
 ```bash
-make start
+make start-standalone
 ```
 
 ### Or step by step
@@ -49,10 +49,10 @@ docker-compose up
 #### 2. Start node app
 ```bash
 # development mode
-npm run start:dev
+yarn start:dev
 
 # production mode
-npm run start:prod
+yarn start:prod
 ```
 
 ## Tests
@@ -64,13 +64,13 @@ make tests
 ### Or step by step
 #### 1. Unit tests
 ```bash
-npm run test:unit
+yarn test:unit
 ```
 
 #### 2. End-to-end tests
 ```bash
 docker-compose up -d
-npm run test:e2e
+yarn test:e2e
 docker-compose stop
 ```
 
@@ -84,7 +84,7 @@ docker-compose up -d
 
 #### 2.a Connection via pgAdmin
 * visit http://localhost:8080
-* enter `{POSTGRES_USER}` and `{POSTGRES_PASSWORD}`
+* enter `{PGADMIN_DEFAULT_EMAIL}` and `{PGADMIN_DEFAULT_PASSWORD}`
 
 *See the [pgAdmin docs](https://www.pgadmin.org) for further information*
 
@@ -103,9 +103,14 @@ or check out the [Postgres docs](https://www.postgresql.org/docs).*
 
 run `exit` to exit
 
+## Admin
+> powered by [AdminBro](https://softwarebrothers.github.io/admin-bro-dev)
+
+*visit http://localhost:4000/admin*
+
 ## Nest
 For detailed explanation on how things work, run 
 ```bash
-npm run help 
+yarn help 
 ```
 or check out the [Nest docs](https://docs.nestjs.com).

@@ -31,3 +31,13 @@ export const testMeasurement: Measurement = {
 export const testMeasurements: Measurements = [
   testMeasurement,
 ]
+
+export const testApiV1ResponseMeta: ApiV1ResponseMeta = {
+  limit: 100,
+  page: 1,
+}
+
+export const testApiV1Response: ApiV1Response<Measurements> = {
+  results: testMeasurements,
+  meta: testApiV1ResponseMeta,
+}

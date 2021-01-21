@@ -1,0 +1,19 @@
+{
+  "name": "oaq-mono-repo",
+  "version": "0.0.1",
+  "author": "tino.goetz",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start:dev": "pm2-dev start ecosystem.config.js",
+    "start": "pm2-runtime start ecosystem.config.js  --format",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:status": "pm2 status",
+    "pm2:show": "pm2 show",
+    "pm2:stop": "pm2 stop all",
+    "pm2": "pm2"
+  },
+  "devDependencies": {
+    "pm2": "^4.5.1"
+  }
+}

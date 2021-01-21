@@ -21,7 +21,7 @@ import { appTranslations } from '~/app/translations'
 export class AppContainerComponent
   extends AbstractContainerComponent
   implements OnInit, OnDestroy {
-  title = 'acn-code-now'
+  title = 'oac-frontend'
 
   theme$ = this.settingsFacade.theme$
   language$ = this.settingsFacade.language$

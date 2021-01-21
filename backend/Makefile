@@ -1,24 +1,71 @@
-# docker variables
-DOCKER_START = docker-compose up -d
+# ---------
+# Variables
+# ---------
+# Make variables
+MAKE_DOLLAR := $$
+
+# Project variables
+PROJECT_PREFIX = oaq
+
+# Docker variables
+DOCKER_LIST = docker ps -a --filter name=${PROJECT_PREFIX}
+DOCKER_CLEAR = docker rm ${MAKE_DOLLAR}(docker ps -qa --filter name=${PROJECT_PREFIX})
+DOCKER_BUILD = docker-compose build --no-cache
+DOCKER_START = docker-compose up -d --force-recreate --remove-orphans
 DOCKER_STOP = docker-compose stop
 
-# Setup the project
+# -----------
+# DB commands
+# -----------
+# Generate migration
+migration-add:
+	yarn migration:add
+
+# Run migrations
+migration-run:
+	yarn migration:run
+
+# Run alias
+migration: migration-run
+
+# --------------------
+# Application commands
+# --------------------
+# Setup backend
 setup:
 	cp .env.example .env
-	npm install
+	yarn
 
-# Start the project
-start:
+# Start docker
+docker-start:
+	${DOCKER_BUILD}
 	${DOCKER_START}
-	npm run start:dev
+
+# Start backend in standalone mode
+start-standalone:
+	${DOCKER_START}
+	yarn start:dev
+
+# Start backend in integrated mode
+start-integrated:
+	${DOCKER_START}
+
+# Start alias
+start: start-integrated
 
 # Stop docker containers
 stop:
 	${DOCKER_STOP}
+	${DOCKER_CLEAR}
 
-# Start tests
+# Current status of backend
+status:
+	${DOCKER_LIST}
+
+# Run backend tests
 tests:
-	npm run test:unit
+	yarn test:unit
 	${DOCKER_START}
-	npm run test:e2e
+	yarn test:e2e
 	${DOCKER_STOP}
+	${DOCKER_CLEAR}

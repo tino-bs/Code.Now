@@ -22,7 +22,8 @@ export class MeasurementsPageEffects {
       ofType(actionLoadMeasurements),
       exhaustMap(() =>
         this.measurementsHttpService.getMeasurements().pipe(
-          map((resp: ApiV1Response<Measurements>) => actionLoadMeasurementsSuccess({ resp }),
+          // map((resp: ApiV1Response<Measurements>) => actionLoadMeasurementsSuccess({ resp }),
+          map((resp: Measurements) => actionLoadMeasurementsSuccess({ resp }),
           ),
           catchError(error => of(actionLoadMeasurementsError({ error }))),
         ),

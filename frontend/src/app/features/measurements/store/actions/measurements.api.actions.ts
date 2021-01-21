@@ -4,7 +4,8 @@ import { ApiV1Response, Measurements } from '../../models/measurements.models'
 // measurements
 export const actionLoadMeasurementsSuccess = createAction(
   '[Measurements API] Load Success',
-  props<{ resp: ApiV1Response<Measurements> }>(),
+  // props<{ resp: ApiV1Response<Measurements> }>(),
+  props<{ resp: Measurements }>(),
 )
 
 // general request error

@@ -31,9 +31,10 @@ export const {
 
 const reducer = createReducer(
   initialState,
-  on(actionLoadMeasurementsSuccess, (state, { resp }) => {
+  on(
+    actionLoadMeasurementsSuccess, (state, { resp }) => {
     state = { ...state, loaded: true }
-    return adapter.setAll(resp.results, state)
+    return adapter.setAll(resp, state)
   }),
   on(actionLoadMeasurementsError, (state, { error }) => ({
     ...state,

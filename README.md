@@ -1,90 +1,59 @@
-# CODE.NOW!
+![repo_image](https://repository-images.githubusercontent.com/325600257/67771200-54e6-11eb-859c-a14b69c75d3c)
 
-Are you ready to make an impact? Then join our Accenture Code.Now challenge!​
-
-Air pollution is an important topic and will influence the quality of our future. As the hazards of air pollution remain invisible without air quality data, AirPoll as a young, international startup, has developed and placed air quality monitors all over the world in order to provide the largest air quality database. ​
-
-​You have been hired by the company as a full stack developer to build an air quality app which makes it possible for everyone to check the air quality in their cities. Are you up for the challenge?​
-
-Among all correct submitted codes we will raffle three Oculus Quests! This is a full stack developer challenge which consists of a frontend and a backend development part. Clone the according repository and solve the challenge. To submit you will have to push your work to your own GitHub account and make sure your repository is public. All we need is the link to your repository until 10.01.2021.​
-
-Let`s make an impact together! We are looking forward to your solutions!​
-
-## Use case - AirPoll App
-
-### Background
-
-AirPoll is a young, international startup which is aware of the fact, that the hazards of air pollution will remain invisible without air quality data. AirPoll has developed and placed air quality monitors all over the world in order to provide the largest air quality database.
-
+# AirPoll App
+> AirPoll is a young, international startup which is aware of the fact, that the hazards of air pollution will remain invisible without air quality data. AirPoll has developed and placed air quality monitors all over the world in order to provide the largest air quality database.
 You have been hired by the company as a fullstack developer to build an air quality app that makes it possible for everyone to check the air quality in their cities.
 
-### Your Tasks
+### Makefile
+In order to use the comfy `make` commands you should have the
+[Make Automation Tool](https://www.gnu.org/software/make/manual/make.html) installed,
+but it is not absolutely necessary to get the work done.  
+*You can check by running `make -v` or `gmake -v` - each is equally efficient from v3 or later*
 
-#### In the Frontend:
-
-The client wants you to build a web application to display the air quality index and other relevant properties for countries, its cities and its locations.
-The frontend should be user friendly and fulfill the following requirements;
-
-- Responsive UI, ensuring adaptive viewport for mobile devices and PC/laptop
-- Clean and modern design
-- The following attributes need to be displayed in the order given:
-  - the `location` name
-  - the `city` and `country` name
-  - the `air pollution` value and its `measurement unit` and `particulate matter` parameter
-  - the location's `longitude` and `latitude` value
-  - the `local date and time` value
-- The list must support infinite scrolling and should be sortable by each attribute(ASC and DESC)
-
-Additionally, the client demands a solution capable of filtering the data by;
-- one country
-- one city
-
-The project will soon scale and more developers will support you on feature development. Therefore, clean code principles, appropriate test coverage and code documentation are key factors and highly valued.
-
-#### In the Backend:
-
-The design and implementation of the backend component is part of your responsibility. The air quality data for the web app is provided by the [Open AQ Platform API](https://openaq.org/#/?_k=bgfemx).
-The backend needs to be capable to;
-
-- Fetch data from AQ public API
-- Insert AQ API data into a database
-- Provide endpoint to serve AQ data to the frontend
+#### Makefile support for your IDE
+[Jetbrains](https://plugins.jetbrains.com/plugin/9333-makefile-support) or
+[VS Code](https://marketplace.visualstudio.com/items?itemName=carlos-algms.make-task-provider)
 
 ## Setup
+Make sure to have [yarn](https://classic.yarnpkg.com/en)
+and [Docker](https://docs.docker.com/get-docker/) (including *docker compose*) installed.
 
-Download and unzip the source repository or clone it using Git.
-
-### Frontend
-
-This section describes the procedure to run the project with our predefined setup by using Angular, Node and npm.
-Of course, you are also allowed to use your fronted framework (and package manager) of choice like React, Vue, Svelte etc., or even your own custom approach.
-
-#### What you need to get our example going
-
-- Install [Node.js 12.16.2](https://nodejs.org/en/download/) or later which includes npm
-- Install [Caddy 2.0](https://caddyserver.com/docs/install) or later
-
-#### How to run the frontend application
-*In the frontend directory:*
+### Make setup
 ```bash
-npm install
+make setup
 ```
+
+### Or step by step
+#### 1. Backend
+Follow the [backend setup instructions](./backend/README.md)
+
+#### 2. Frontend
+Follow the [frontend setup instructions](./frontend/README.md)
+
+## How to run the application
+### Make start
 ```bash
-npm run start
+make start
 ```
-```bash
-caddy run
-```
-*Visit* [https://localhost](https://localhost)
 
-See [further information](./frontend/README.md) according the frontend app
+### Or step by step
+#### 1. Backend
+Follow the [backend start instructions](./backend/README.md)
 
-## Submission
+#### 2. Frontend
+Follow the [frontend start instructions](./frontend/README.md)
 
+### URL
+Visit [https://localhost](https://localhost)
+
+## Accenture Code.Now challenge!
+> see [GitHub](https://github.com/AccentureChallenge/Code.Now)
+
+### Submission
 - After you completed the challenge, upload it to your github page and make it public (so our team can review it)
 - Use our [npm plugin](https://www.npmjs.com/package/acn-code-now) to submit your work
 
-## Copyright and License
+### Copyright and License
 
 Copyright (c) 2020 Accenture AG
 
