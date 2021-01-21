@@ -111,6 +111,6 @@ run `exit` to exit
 ## Nest
 For detailed explanation on how things work, run 
 ```bash
-yarn help 
+yarn help:me
 ```
 or check out the [Nest docs](https://docs.nestjs.com).

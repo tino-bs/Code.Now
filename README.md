@@ -46,6 +46,14 @@ Follow the [frontend start instructions](./frontend/README.md)
 ### URL
 Visit [https://localhost](https://localhost)
 
+## PM2
+For detailed explanation on how things work, run 
+```bash
+yarn help:me
+```
+or check out the docs for [PM2 docs](https://pm2.keymetrics.io).
+
+
 ## Accenture Code.Now challenge!
 > see [GitHub](https://github.com/AccentureChallenge/Code.Now)
 

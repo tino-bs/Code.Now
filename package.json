@@ -11,7 +11,8 @@
     "pm2:status": "pm2 status",
     "pm2:show": "pm2 show",
     "pm2:stop": "pm2 stop all",
-    "pm2": "pm2"
+    "pm2": "pm2",
+    "help:me": "pm2 --help"
   },
   "devDependencies": {
     "pm2": "^4.5.1"

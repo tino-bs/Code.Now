@@ -42,6 +42,6 @@ yarn build
 ## Angular
 For detailed explanation on how things work, run 
 ```bash
-yarn ng help 
+yarn help:me
 ```
 or check out the docs for [Angular](https://angular.io) and [Angular CLI](https://cli.angular.io).

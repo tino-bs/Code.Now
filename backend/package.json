@@ -19,7 +19,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "migration:add": "ts-node ./node_modules/typeorm/cli.js migration:generate -n PostRefactoring",
     "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
-    "help": "nest --help"
+    "help:me": "nest --help"
   },
   "dependencies": {
     "@admin-bro/express": "^3.1.0",
