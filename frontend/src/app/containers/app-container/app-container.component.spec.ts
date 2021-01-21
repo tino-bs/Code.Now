@@ -26,10 +26,10 @@ describe('AppContainerComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'oac-frontend'`, () => {
+  it(`should have as title 'oaq-frontend'`, () => {
     const fixture = TestBed.createComponent(AppContainerComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('oac-frontend');
+    expect(app.title).toEqual('oaq-frontend');
   });
 
   it('should render title', () => {

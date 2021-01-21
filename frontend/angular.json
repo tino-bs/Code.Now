@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "oac-frontend": {
+    "oaq-frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/oac-frontend",
+            "outputPath": "dist/oaq-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "oac-frontend:build"
+            "browserTarget": "oaq-frontend:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "oac-frontend:build:production"
+              "browserTarget": "oaq-frontend:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "oac-frontend:build"
+            "browserTarget": "oaq-frontend:build"
           }
         },
         "test": {
@@ -98,16 +98,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "oac-frontend:serve"
+            "devServerTarget": "oaq-frontend:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "oac-frontend:serve:production"
+              "devServerTarget": "oaq-frontend:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "oac-frontend"
+  "defaultProject": "oaq-frontend"
 }
